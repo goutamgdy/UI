@@ -1,0 +1,17 @@
+name: Greet Branch
+
+# Triggered on each push
+
+on:
+  push:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+  steps:
+    - name: checout Code
+      uses: actions/@checkout@v3
+
+    - name: Print Greeting Massge
+      run: |
+          echo "Hello! you pushed changes to the branch: ${{ github.ref_name }}"
