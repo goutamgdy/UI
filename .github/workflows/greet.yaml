@@ -1,0 +1,16 @@
+name: Greet Branch
+
+# Trigger workflow on push
+on:
+  push:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print greeting
+        run: |
+          echo "Hello! You pushed changes to the branch: ${{ github.ref_name }}"
