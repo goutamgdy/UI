@@ -1,6 +1,6 @@
 import React from "react";
 
-function Kiya(){
+function Kiya() {
     return (
         <div>
             <h2>
