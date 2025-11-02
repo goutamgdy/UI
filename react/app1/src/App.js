@@ -7,6 +7,7 @@ import ClassClick from './components/ClassClick';
 import EventBind from './components/EventBind';
 import ParentComponent from './components/ParentComponent';
 import UseState from './components/UseState';
+import UseStateCheckBox from './components/UseStateCheckBox';
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,8 @@ function App() {
       {/* <ClassClick /> // Class Component click handler */}
       {/* <EventBind /> */}
       {/* <ParentComponent /> */}
-      <UseState />
+      {/* <UseState /> */}
+      <UseStateCheckBox />
     </div>
   );
 }
