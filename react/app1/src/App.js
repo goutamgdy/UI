@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+
 import Greet from './components/Greet';
 import Hello from './components/Hello';
 import Counter from './components/cnt';
@@ -7,6 +6,8 @@ import FunctionClick from './components/functionClick';
 import ClassClick from './components/ClassClick';
 import EventBind from './components/EventBind';
 import ParentComponent from './components/ParentComponent';
+import UseState from './components/UseState';
+import UseStateCheckBox from './components/UseStateCheckBox';
 function App() {
   return (
     <div className="App">
@@ -15,7 +16,9 @@ function App() {
       {/* <FunctionClick /> //Functional component click handler */}
       {/* <ClassClick /> // Class Component click handler */}
       {/* <EventBind /> */}
-      <ParentComponent />
+      {/* <ParentComponent /> */}
+      {/* <UseState /> */}
+      <UseStateCheckBox />
     </div>
   );
 }
