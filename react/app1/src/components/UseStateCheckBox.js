@@ -2,16 +2,16 @@ import React from 'react'
 import { useState } from 'react';
 function UseStateCheckBox() {
     const [liked, setLiked] = useState(false);
-    function handleChange(e){
-        setLiked(e.target.checked);
-    }
+    // function handleChange(e){
+    //     setLiked(e.target.checked);
+    // }
   return (
     <div>
       <label>
         <input
           type="checkbox"
           checked={liked}
-          onChange={handleChange}
+          onChange={(e)=>{setLiked(e.target.checked)}}
         />
         I liked this
       </label>
