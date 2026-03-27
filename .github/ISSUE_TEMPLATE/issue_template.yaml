@@ -1,53 +1,116 @@
 name: Bug Report / Change Request
-description: 
+description: Create a detailed bug report or request a change
+title: "[<Issue Type>] <Short Description>"
+labels: ["triage"]
 body:
-  - type: dropdown
-    id: environment
-    attributes:
-      label: Environment
-      options: 
-        - main
-        - dev
-    validations: 
-      required: true
 
-  - type: dropdown
-    id: issue_type
-    attributes:
-      label: Issue Type
-      options: 
-        - Bug Fix
-        - Request Change
-      default: 0   # ✅ fixed typo
-    validations: 
-      required: true
+* type: markdown
+  attributes:
+  value: |
+  ## 📋 Issue Submission Form
+  Please fill out all required fields carefully. This helps us resolve your issue faster.
 
-  - type: input
-    id: subject
-    attributes:
-      label: Subject
-      description: Provide short desc of the issue.
-    validations: 
-      required: true
+* type: dropdown
+  id: environment
+  attributes:
+  label: 🌍 Environment
+  description: Select the environment where the issue occurred
+  options:
+  - main
+  - dev
+  validations:
+  required: true
 
-  - type: textarea
+* type: dropdown
+  id: issue_type
+  attributes:
+  label: 🧩 Issue Type
+  options:
+  - Bug Fix
+  - Request Change
+  default: 0
+  validations:
+  required: true
+
+* type: dropdown
+  id: severity
+  attributes:
+  label: ⚠️ Severity
+  description: Impact level of the issue
+  options:
+  - Critical (System Down / Data Loss)
+  - High (Major Feature Broken)
+  - Medium (Partial Issue)
+  - Low (Minor Issue / UI)
+  default: 2
+  validations:
+  required: true
+
+* type: input
+  id: subject
+  attributes:
+  label: 📝 Subject
+  description: Provide a short summary of the issue
+  placeholder: e.g., Login API returning 500 error
+  validations:
+  required: true
+
+* type: textarea
   id: description
   attributes:
-    label: Detailed Description
-    description: Provide detailed info about the issue.
-    placeholder: |
-      Steps to reproduce:
-      1. Go to...
-      2. Click on...
-      3. Error occurs...
+  label: 📖 Detailed Description
+  description: Provide detailed information about the issue
+  placeholder: |
+  ### Steps to Reproduce
+  1. Go to login page
+  2. Enter credentials
+  3. Click login
 
-      Expected result:
-      Actual result:
-  validations: 
-    required: true
+  ```
+  ### Expected Behavior
+  User should be logged in successfully
 
-  - type: input
-    id: client_ref_number
-    attributes:
-      label: Client Reference Number
-      description: Provide client reference number if available
+  ### Actual Behavior
+  API returns 500 error
+
+  ### Additional Notes
+  Any extra context...
+  ```
+
+  validations:
+  required: true
+
+* type: textarea
+  id: logs
+  attributes:
+  label: 📜 Logs / Error Messages
+  description: Paste any relevant logs or error messages
+  placeholder: Paste logs here...
+  validations:
+  required: false
+
+* type: input
+  id: client_ref_number
+  attributes:
+  label: 🔢 Client Reference Number
+  description: Provide client reference number if available
+  placeholder: e.g., CL-12345
+  validations:
+  required: false
+
+* type: textarea
+  id: attachments
+  attributes:
+  label: 📎 Attachments / Screenshots
+  description: Add screenshots or file links if applicable
+  placeholder: Upload images or paste links here
+  validations:
+  required: false
+
+* type: checkboxes
+  id: confirmation
+  attributes:
+  label: ✅ Confirmation
+  options:
+  - label: I have filled all the required details correctly
+  required: true
