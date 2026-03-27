@@ -1,99 +1,47 @@
 name: Bug Report / Change Request
-description: Create a detailed bug report or request a change
-title: "[Issue] Short Description"
-labels: ["triage"]
+description: Create a bug report or request a change
 
 body:
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options: 
+        - main
+        - dev
+    validations: 
+      required: true
 
-* type: markdown
-  attributes:
-  value: |
-  ## Issue Submission Form
-  Please fill out all required fields carefully.
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue Type
+      options: 
+        - Bug Fix
+        - Request Change
+      default: 0   # ✅ fixed typo here
+    validations: 
+      required: true
 
-* type: dropdown
-  id: environment
-  attributes:
-  label: Environment
-  options:
-  - main
-  - dev
-  validations:
-  required: true
+  - type: input
+    id: subject
+    attributes:
+      label: Subject
+      description: Provide short desc of the issue.
+    validations: 
+      required: true
 
-* type: dropdown
-  id: issue_type
-  attributes:
-  label: Issue Type
-  options:
-  - Bug Fix
-  - Request Change
-  default: 0
-  validations:
-  required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Detailed Description
+      description: Provide detailed info about the issue.
+      #placeholde: "jjk"
+    validations: 
+      required: true
 
-* type: dropdown
-  id: severity
-  attributes:
-  label: Severity
-  options:
-  - Critical
-  - High
-  - Medium
-  - Low
-  default: 2
-  validations:
-  required: true
-
-* type: input
-  id: subject
-  attributes:
-  label: Subject
-  description: Provide a short summary of the issue
-  placeholder: e.g., Login API returning error
-  validations:
-  required: true
-
-* type: textarea
-  id: description
-  attributes:
-  label: Detailed Description
-  description: Provide detailed information
-  placeholder: |
-  Steps to reproduce:
-  1.
-  2.
-  3.
-
-  ```
-  Expected behavior:
-
-  Actual behavior:
-  ```
-
-  validations:
-  required: true
-
-* type: textarea
-  id: logs
-  attributes:
-  label: Logs / Errors
-  description: Paste logs if available
-  validations:
-  required: false
-
-* type: input
-  id: client_ref_number
-  attributes:
-  label: Client Reference Number
-  description: Optional
-  validations:
-  required: false
-
-* type: checkboxes
-  id: confirmation
-  attributes:
-  label: Confirmation
-  options:
-  - label: I have filled all required details
-  required: true
+  - type: input
+    id: client_ref_number
+    attributes:
+      label: Client Reference Number
+      description: Provide client reference number if available
