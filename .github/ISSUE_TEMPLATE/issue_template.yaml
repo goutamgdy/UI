@@ -1,45 +1,45 @@
 name: Bug Report / Change Request
-description:
+description: 
 body:
   - type: dropdown
     id: environment
     attributes:
-        label: Environment
-        options: 
-            - main
-            - dev
+      label: Environment
+      options: 
+        - main
+        - dev
     validations: 
-       required: true
+      required: true
+
   - type: dropdown
     id: issue_type
     attributes:
-        label: Issue Type
-        options: 
-            - Bug Fix
-            - Request Change
-        deafult: 0
+      label: Issue Type
+      options: 
+        - Bug Fix
+        - Request Change
+      default: 0   # ✅ fixed typo
     validations: 
-       required: true
+      required: true
+
   - type: input
     id: subject
     attributes:
-        label: Subject
-        description: Provide short desc of the issue.
-        
+      label: Subject
+      description: Provide short desc of the issue.
     validations: 
-       required: true
+      required: true
+
   - type: textarea
     id: description
     attributes:
-        label: Detailed Description
-        description: Provide detailed info about the issue.
-        
+      label: Detailed Description
+      description: Provide detailed info about the issue.
     validations: 
-       required: true
+      required: true
+
   - type: input
     id: client_ref_number
     attributes:
-        label: Client Reference Number
-        description: Provide client reference number if available
-        
-  
+      label: Client Reference Number
+      description: Provide client reference number if available
