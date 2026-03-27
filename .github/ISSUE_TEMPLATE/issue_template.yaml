@@ -1,20 +1,20 @@
 name: Bug Report / Change Request
 description: Create a detailed bug report or request a change
-title: "[<Issue Type>] <Short Description>"
+title: "[Issue] Short Description"
 labels: ["triage"]
+
 body:
 
 * type: markdown
   attributes:
   value: |
-  ## 📋 Issue Submission Form
-  Please fill out all required fields carefully. This helps us resolve your issue faster.
+  ## Issue Submission Form
+  Please fill out all required fields carefully.
 
 * type: dropdown
   id: environment
   attributes:
-  label: 🌍 Environment
-  description: Select the environment where the issue occurred
+  label: Environment
   options:
   - main
   - dev
@@ -24,7 +24,7 @@ body:
 * type: dropdown
   id: issue_type
   attributes:
-  label: 🧩 Issue Type
+  label: Issue Type
   options:
   - Bug Fix
   - Request Change
@@ -35,13 +35,12 @@ body:
 * type: dropdown
   id: severity
   attributes:
-  label: ⚠️ Severity
-  description: Impact level of the issue
+  label: Severity
   options:
-  - Critical (System Down / Data Loss)
-  - High (Major Feature Broken)
-  - Medium (Partial Issue)
-  - Low (Minor Issue / UI)
+  - Critical
+  - High
+  - Medium
+  - Low
   default: 2
   validations:
   required: true
@@ -49,32 +48,27 @@ body:
 * type: input
   id: subject
   attributes:
-  label: 📝 Subject
+  label: Subject
   description: Provide a short summary of the issue
-  placeholder: e.g., Login API returning 500 error
+  placeholder: e.g., Login API returning error
   validations:
   required: true
 
 * type: textarea
   id: description
   attributes:
-  label: 📖 Detailed Description
-  description: Provide detailed information about the issue
+  label: Detailed Description
+  description: Provide detailed information
   placeholder: |
-  ### Steps to Reproduce
-  1. Go to login page
-  2. Enter credentials
-  3. Click login
+  Steps to reproduce:
+  1.
+  2.
+  3.
 
   ```
-  ### Expected Behavior
-  User should be logged in successfully
+  Expected behavior:
 
-  ### Actual Behavior
-  API returns 500 error
-
-  ### Additional Notes
-  Any extra context...
+  Actual behavior:
   ```
 
   validations:
@@ -83,34 +77,23 @@ body:
 * type: textarea
   id: logs
   attributes:
-  label: 📜 Logs / Error Messages
-  description: Paste any relevant logs or error messages
-  placeholder: Paste logs here...
+  label: Logs / Errors
+  description: Paste logs if available
   validations:
   required: false
 
 * type: input
   id: client_ref_number
   attributes:
-  label: 🔢 Client Reference Number
-  description: Provide client reference number if available
-  placeholder: e.g., CL-12345
-  validations:
-  required: false
-
-* type: textarea
-  id: attachments
-  attributes:
-  label: 📎 Attachments / Screenshots
-  description: Add screenshots or file links if applicable
-  placeholder: Upload images or paste links here
+  label: Client Reference Number
+  description: Optional
   validations:
   required: false
 
 * type: checkboxes
   id: confirmation
   attributes:
-  label: ✅ Confirmation
+  label: Confirmation
   options:
-  - label: I have filled all the required details correctly
+  - label: I have filled all required details
   required: true
