@@ -31,12 +31,20 @@ body:
       required: true
 
   - type: textarea
-    id: description
-    attributes:
-      label: Detailed Description
-      description: Provide detailed info about the issue.
-    validations: 
-      required: true
+  id: description
+  attributes:
+    label: Detailed Description
+    description: Provide detailed info about the issue.
+    placeholder: |
+      Steps to reproduce:
+      1. Go to...
+      2. Click on...
+      3. Error occurs...
+
+      Expected result:
+      Actual result:
+  validations: 
+    required: true
 
   - type: input
     id: client_ref_number
